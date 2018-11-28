@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title></title>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+        <!--bootstrap css-->
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <!--bootstrap js-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <!--jquery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><!-- general library    -->
+        <link rel="stylesheet" type="text/css" href="./css/style.css"><!-- general JS-->
+        <script src="./js/layout.js"></script><!-- include chessboard.js -->
+        <!-- pug will look in the folder set up in express.static-->
+        <link rel="stylesheet" href="./lib/chessboardjs/css/chessboard-0.3.0.min.css">
+        <script src="./lib/chessboardjs/js/chessboard-0.3.0.min.js"></script>
+        <!--include chess.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"></script>
+        <!--include the board-->
+        <script src="./js/board.js"></script>
+        <!--include the engineGame-->
+        <script src="./js/enginegame.js"></script>
+        <!--inclue main game-->
+        <script src="./js/main.js"></script>
+        <!--include socket.io-->
+        <script src="./js/socketClient.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+        <link rel="stylesheet" href="./css/main.css">
+    </head>
+
+    <body>
+        <div class="fluid-container">
+            <div class="row">
+                <div class="col-sm-2">
+                    <div class="container-fluid">
+                        <h2 style="text-align:center;">Chess.io</h2>
+                        <div class="row"><button class="btn btn-primary" id="newGameButton">New Game</button></div>
+                        <div class="row" style="margin-top:20px; margin-bottom:20px;">
+                            <form id="nameForm" method=""><label>Enter Your Name</label><input class="chat-box" id="nameInput"
+                                    type="text"><span><button class="btn btn-primary" type="submit">Enter Name</button></span></form>
+                        </div>
+                        <div class="row">
+                            <form id="joinGame" method=""><label>Enter Host Name</label><input class="chat-box" id="hostName"
+                                    type="text"><span><button class="btn btn-primary" type="submit">Join Host</button></span></form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6" style="text-align:center;">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <h3 id="name" style="margin-bottom:20px; text-align:center;width:100%;"></h3>
+                        </div>
+                        <div class="row">
+                            <div id="board" style="width:450px;padding-top:50px; margin:auto;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="container-fluid">
+                        <div class="row window info">
+                            <!-- Info data-->
+                            <h3 id="headline" style="text-align:center; width:100%;">Messages</h3>
+                        </div>
+                        <div class="row window moves-history">
+                            <ul class="messages-window" id="messages" data-spy="scroll"></ul>
+                        </div>
+                        <div class="row window chat-box-container">
+                            <form id="chatBox" method=""><input class="chat-box" id="chat" type="text"><span><button
+                                        class="btn btn-primary" type="submit">Send</button></span></form>
+                        </div>
+                        <div class="jumbotron jumbotron-fluid " style="text-align:center; margin-top:20px;padding-top:10px;padding-bottom:10px;">
+                            <div class="container">
+                                <p class="engineStatus">Engine Status</p>
+                            </div>
+                        </div>
+                        <!--test the log, the scroller is not implemented-->
+                        <div class="row">
+                            <div>
+                                <p class="logger">Logger :</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
